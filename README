@@ -17,3 +17,11 @@ with (switch statements?) controlling functions responsible for game parts.
 one thing to consider is the variance that comes with the ability to speed up
 and slow down. 
 
+There seems to be a lot of camera controls 
+I think that a "factory" might be the best way to generate the map
+Another strategy might be to have a few tile maps that are prebuilt 
+that we  generate, but I think that it might be more hassle that I think
+
+"tumble"
+
+
