@@ -2,12 +2,15 @@ let config = {
     type: Phaser.CANVAS,
      width: 640,
   height: 1280,
-  scene: [Menu,Play],
+  scene: [Play,Menu],
   physics: {
       default: 'matter',
       matter: {
           enableSleeping: true,
-          
+          //setBounds: {
+          //    left: true;
+           //   right: true; 
+         // }
       },
       debug: {
           showBody: true,
