@@ -2,9 +2,18 @@ class Play extends Phaser.Scene {
     constructor () {
         super("playScene");
     }
+ 
+    preload(){
 
-    create(){
-        this.physics.world 
     }
+      
+    create(){
+         
+    }
+
+ update(){
+
+    
+ }
 
 }

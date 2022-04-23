@@ -7,10 +7,11 @@ let config = {
       default: 'matter',
       matter: {
           enableSleeping: true,
-          //setBounds: {
-          //    left: true;
-           //   right: true; 
-         // }
+          setBounds: {
+              left: true,
+              right: true,
+               
+          }
       },
       debug: {
           showBody: true,
