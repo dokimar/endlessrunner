@@ -3,5 +3,4 @@ class Trunk extends Phaser.Physics.Matter.Image{
     super(world,x,y,texture);
        
    } 
-   world.add.existing
 }

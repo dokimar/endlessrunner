@@ -6,10 +6,11 @@ let config = {
   physics: {
       default: 'matter',
       matter: {
-          enableSleeping: true,
-          setBounds: {
-              left: true,
-              right: true,
+            debug: true,
+            enableSleeping: true,
+            setBounds: {
+                left: true,
+                right: true,
                
           }
       },
