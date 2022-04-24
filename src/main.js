@@ -1,11 +1,12 @@
 let config = {
     type: Phaser.CANVAS,
-     width: 720,
+     width: 900,
     height: 720,
   scene: [Menu, Play],
   physics: {
       default: 'matter',
       matter: {
+            gravity: {x: 0, y: 0},
             debug: true,
             enableSleeping: true,
             setBounds: {
