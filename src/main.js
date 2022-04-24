@@ -1,8 +1,8 @@
 let config = {
     type: Phaser.CANVAS,
-     width: 640,
-  height: 1280,
-  scene: [Play,Menu],
+     width: 720,
+    height: 720,
+  scene: [Menu, Play],
   physics: {
       default: 'matter',
       matter: {
