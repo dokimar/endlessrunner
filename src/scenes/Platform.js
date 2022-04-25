@@ -1,40 +1,22 @@
 class Platform extends Phaser.GameObjects.Sprite  {
-    constructor(scene, x, y, texture, frame, pointValue) {
-        super(scene, x, y, texture, frame, pointValue);
+    constructor(scene, x, y, texture) {
+        super(scene, x, y, texture);
         scene.add.existing(this);
-        this.points = pointValue;
-        this.moveSpeed = game.settings.spaceshipSpeed;
-        this.val = 0;
-        this.canHit = true;
-
     }
 
     update(){
-        if(this.val == 0){
-            // move spaceship left
-            this.x -= this.moveSpeed;
-            this.flipX = false;
+        if (this.y < 0){
+            this.y = game.canvas.height + Phaser.Math.Between(0,1000);
+            this.setAngle(Phaser.Math.Between(-45,45));
         }
         else{
-            this.x += this.moveSpeed;
-            this.flipX = true;
+            if(this.scene.player.body.velocity.y<=20){
+                this.y -= this.scene.player.body.velocity.y;
+            } else { 
+                this.y -= 20;
+            }
         }
-
-        if(this.x <= 0 - this.width && this.val == 0){
-            this.reset();
-        }
-        if(this.x >= game.config.width && this.val == 1){
-            this.reset();
-        }
+        this.x = 400;
     }
 
-    reset(){
-        this.val = Phaser.Math.Between(0,1);
-        if(this.val == 0){
-            this.x = game.config.width;
-        }
-        else{
-            this.x = 0-this.width;
-        }
-    }
 }
