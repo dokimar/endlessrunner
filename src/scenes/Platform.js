@@ -7,7 +7,7 @@ class Platform extends Phaser.GameObjects.Sprite  {
     update(){
         if (this.y < 0){
             this.y = game.canvas.height + Phaser.Math.Between(0,1000);
-            this.setAngle(Phaser.Math.Between(0,90));
+            this.setAngle(Phaser.Math.Between(-45,45));
         }
         else{
             if(this.scene.player.body.velocity.y<=20){
