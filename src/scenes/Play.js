@@ -8,7 +8,8 @@ class Play extends Phaser.Scene {
  
     preload(){
         
-        this.load.image('ab', 'assets/WoodSides.png');
+        this.load.image('ab', 'assets/WoodSide_L.png');
+        this.load.image('ba', 'assets/WoodSide_R.png');
         this.load.image('platA', 'assets/platformA.png');
         this.load.image('bg', 'assets/bg.png');
         this.load.image('slug', 'assets/Slug.png');
@@ -20,10 +21,10 @@ class Play extends Phaser.Scene {
 
 
         this.background = this.add.tileSprite(0, 0, 300, 256, 'bg').setOrigin(0,0).setScale(3);
-        this.WoodR = this.add.tileSprite(game.canvas.width, 0, 29, 285, 'ab').setOrigin(0,0);
-        this.WoodL = this.add.tileSprite(0, 0, 29, 285, 'ab').setOrigin(0,0);
+        this.WoodR = this.add.tileSprite(game.canvas.width, 0, 130, 1439, 'ba').setOrigin(0,0);
+        this.WoodL = this.add.tileSprite(0, 0, 130, 1439, 'ab').setOrigin(0,0);
 
-        this.WoodR = this.add.tileSprite(game.canvas.width, 0, 29, 285, 'ab').setOrigin(0,0);
+        this.WoodR = this.add.tileSprite(game.canvas.width, 0, 130, 1439, 'ba').setOrigin(0,0);
         
         this.matter.add.gameObject(this.WoodL).setFrictionAir(0.001).setStatic(true).setFriction(0.5);
         this.matter.add.gameObject(this.WoodR).setFrictionAir(0.001).setStatic(true).setFriction(0.5);
