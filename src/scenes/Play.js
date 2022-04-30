@@ -20,10 +20,10 @@ class Play extends Phaser.Scene {
 
 
         this.background = this.add.tileSprite(0, 0, 300, 256, 'bg').setOrigin(0,0).setScale(3);
-        this.WoodR = this.add.tileSprite(game.canvas.width, 0, 260, 1439, 'ab').setOrigin(0,0);
-        this.WoodL = this.add.tileSprite(0, 0, 260, 1439, 'ab').setOrigin(0,0);
+        this.WoodR = this.add.tileSprite(game.canvas.width, 0, 29, 285, 'ab').setOrigin(0,0);
+        this.WoodL = this.add.tileSprite(0, 0, 29, 285, 'ab').setOrigin(0,0);
 
-        this.WoodR = this.add.tileSprite(game.canvas.width, 0, 260, 1439, 'ab').setOrigin(0,0);
+        this.WoodR = this.add.tileSprite(game.canvas.width, 0, 29, 285, 'ab').setOrigin(0,0);
         
         this.matter.add.gameObject(this.WoodL).setFrictionAir(0.001).setStatic(true).setFriction(0.5);
         this.matter.add.gameObject(this.WoodR).setFrictionAir(0.001).setStatic(true).setFriction(0.5);
