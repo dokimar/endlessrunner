@@ -32,17 +32,31 @@ class Play extends Phaser.Scene {
 
         this.add.text(game.canvas.width/2, game.canvas.height/3, "Play State").setOrigin(0.5,0);
         this.player = this.add.ellipse(game.canvas.width/2, game.canvas.height/2, 75, 75, 0x6666ff);
-        this.matter.add.gameObject(this.player).setFrictionAir(0.001).setFriction(100);
+        this.matter.add.gameObject(this.player).setFriction(100);
         console.log("hello");
 
-        this.P1 = new Platform(this,0,120, 'platA', 1);
-        this.matter.add.gameObject(this.P1).setFrictionAir(0.001).setIgnoreGravity(true).setStatic(true).setFriction(100);
-        this.P1.setAngle(25);
-        this.P1.y = 1000;
+        this.plat = this.matter.add.image(400, 500, 'platA', null, {isStatic: true}); 
+        this.plat.setAngle(20)
+        //this.P1 = new Platform(this,0,120, 'platA', 1);
+        //this.matter.add.gameObject(this.P1).setFrictionAir(0.001).setIgnoreGravity(true).setStatic(true).setFriction(100);
+        //this.P1.setAngle(25);
+        //this.P1.y = 1000;
     }
 
     update(){
-        this.P1.update();
+        //this.P1.update();
+        if (this.plat.y < 0){
+            this.plat.y = game.canvas.height + Phaser.Math.Between(0,1000);
+            this.plat.setAngle(Phaser.Math.Between(-45,45));
+        }
+        else{
+            if(this.player.body.velocity.y<=20){
+                this.plat.y -= this.player.body.velocity.y;
+            } else { 
+                this.plat.y -= 20;
+            }
+        }
+
         if(this.player.body.velocity.y >= 20){
             this.player.body.velocity.y = 20;
         }
