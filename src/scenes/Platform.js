@@ -1,4 +1,4 @@
-class Platform extends Phaser.GameObjects.Sprite  {
+class Platform extends Phaser.Matter.Image.Sprite  {
     constructor(scene, x, y, texture) {
         super(scene, x, y, texture);
         scene.add.existing(this);
