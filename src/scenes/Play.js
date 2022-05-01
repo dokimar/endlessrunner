@@ -7,7 +7,7 @@ class Play extends Phaser.Scene {
     }
  
     preload(){
-        
+        //this.matter.world.setBounds(true,true,false,false);
         this.load.image('ab', 'assets/WoodSides.png');
         this.load.image('platA', 'assets/platformA.png');
         this.load.image('bg', 'assets/bg.png');
@@ -15,9 +15,11 @@ class Play extends Phaser.Scene {
     }
     
     create(){
+        
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-
+        this.bruh = new Predator(this,50,50,'slug').setOrigin(50,50);
+        this.bruh.setIgnoreGravity(true);
 
         this.background = this.add.tileSprite(0, 0, 300, 256, 'bg').setOrigin(0,0).setScale(3);
         this.WoodR = this.add.tileSprite(game.canvas.width, 0, 260, 1439, 'ab').setOrigin(0,0);
@@ -29,7 +31,7 @@ class Play extends Phaser.Scene {
         this.matter.add.gameObject(this.WoodR).setFrictionAir(0.001).setStatic(true).setFriction(0.5);
         
         this.speed = 0;
-
+        
         this.player = this.add.ellipse(game.canvas.width/2, game.canvas.height/2, 75, 75, 0x6666ff);
         this.matter.add.gameObject(this.player).setFriction(.1);
         console.log("hello");
@@ -67,15 +69,7 @@ class Play extends Phaser.Scene {
         else if (keyRIGHT.isDown){
             this.player.setVelocityX(5,0);
         }
-        else {
-            let x = this.player.body.velocity.x;
-            if(x > 0){
-                this.player.setVelocityX(x-0.005,0);
-            }
-            else if(x < 0){
-                this.player.setVelocityX(x+0.005,0);
-            }
-        }
+        
 
        // console.log(this.player.body.velocity.y)
         this.background.tilePositionY += this.player.body.velocity.y/4;
