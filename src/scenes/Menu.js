@@ -46,7 +46,7 @@ class Menu extends Phaser.Scene {
       this.add.text(centerX, centerY + 3 * textSpacer, 'Press (Q) to Break Through Webs', textConfig).setOrigin(0.5);
       // Goal text
       textConfig.color = '#FFFF66';
-      this.add.text(centerX, centerY + 4 * textSpacer, '>> Avoid the Bird and Falling too Fast <<', textConfig).setOrigin(0.5);
+      this.add.text(centerX, centerY + 4 * textSpacer, '>> Avoid the Bird <<', textConfig).setOrigin(0.5);
       // credits line text
       textConfig.color = '#5F9EA0';
       textConfig.fontSize= '14px';
