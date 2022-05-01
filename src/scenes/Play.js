@@ -32,7 +32,8 @@ class Play extends Phaser.Scene {
         this.speed = 0;
 
         this.add.text(game.canvas.width/2, game.canvas.height/3, "Play State").setOrigin(0.5,0);
-        this.player = this.add.ellipse(game.canvas.width/2, game.canvas.height/2, 75, 75, 0x6666ff);
+        this.player = this.add.image(game.canvas.width/2, game.canvas.height/2, 'slug');
+    
         this.matter.add.gameObject(this.player).setFrictionAir(0.001).setFriction(100);
         console.log("hello");
 
