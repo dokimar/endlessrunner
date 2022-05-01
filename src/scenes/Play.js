@@ -30,9 +30,8 @@ class Play extends Phaser.Scene {
         
         this.speed = 0;
 
-        this.add.text(game.canvas.width/2, game.canvas.height/3, "Play State").setOrigin(0.5,0);
         this.player = this.add.ellipse(game.canvas.width/2, game.canvas.height/2, 75, 75, 0x6666ff);
-        this.matter.add.gameObject(this.player).setFriction(100);
+        this.matter.add.gameObject(this.player).setFriction(.1);
         console.log("hello");
         this.Warner = new velbar(this,0,0,'slug').setOrigin(0,0);
         this.plat = this.matter.add.image(400, 500, 'platA', null, {isStatic: true}); 
@@ -67,6 +66,15 @@ class Play extends Phaser.Scene {
         }
         else if (keyRIGHT.isDown){
             this.player.setVelocityX(5,0);
+        }
+        else {
+            let x = this.player.body.velocity.x;
+            if(x > 0){
+                this.player.setVelocityX(x-0.005,0);
+            }
+            else if(x < 0){
+                this.player.setVelocityX(x+0.005,0);
+            }
         }
 
        // console.log(this.player.body.velocity.y)
