@@ -11,6 +11,22 @@ class Menu extends Phaser.Scene {
    }
    
    create(){
+      // background
+      this.background = this.add.tileSprite(0, 0, 300, 256, 'bg').setOrigin(0,0).setScale(3);
+      
+      // button
+      this.button = this.add.image(game.canvas.width/2, game.canvas.height/2, 'button', 1);
+      this.button.setInteractive();
+      
+      // title
+      const title = this.add.text(game.canvas.width/2, game.canvas.height/4, "Slug Fall").setOrigin(0.5,0);
+      title.setFontSize(100);
+      this.start = false;
+
+      // other text on screen
+      let centerX = game.config.width/2;
+      let centerY = game.config.height/2;
+      let textSpacer = 48;
       let textConfig = {
          fontFamily: 'Courier',
          fontSize: '28px',
@@ -25,25 +41,9 @@ class Menu extends Phaser.Scene {
          strokeThickness: 5,
          fixedWidth: 0
       }
-
-
-      this.background = this.add.tileSprite(0, 0, 300, 256, 'bg').setOrigin(0,0).setScale(3);
-      
-      this.button = this.add.image(game.canvas.width/2, game.canvas.height/2, 'button', 1);
-      this.button.setInteractive();
-      const title = this.add.text(game.canvas.width/2, game.canvas.height/4, "Slug Fall").setOrigin(0.5,0);
-      title.setFontSize(100);
-      this.start = false;
-
-
-      let centerX = game.config.width/2;
-      let centerY = game.config.height/2;
-      let textSpacer = 48;
-
-
       // game instructions text
-      this.add.text(centerX, centerY + 2 * textSpacer, 'Move with the Arrow Keys (←)(→)', textConfig).setOrigin(0.5);
-      this.add.text(centerX, centerY + 3 * textSpacer, 'Press (Q) to Break Through Webs', textConfig).setOrigin(0.5);
+      this.add.text(centerX, centerY + 3 * textSpacer, 'Move with the Arrow Keys (←)(→)', textConfig).setOrigin(0.5);
+      //this.add.text(centerX, centerY + 3 * textSpacer, 'Press (Q) to Break Through Webs', textConfig).setOrigin(0.5);
       // Goal text
       textConfig.color = '#FFFF66';
       this.add.text(centerX, centerY + 4 * textSpacer, '>> Avoid the Bird <<', textConfig).setOrigin(0.5);
