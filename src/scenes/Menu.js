@@ -11,7 +11,7 @@ class Menu extends Phaser.Scene {
    }
    
    create(){
-      this.background = this.add.tileSprite(0, 0, 300, 256, 'bg').setOrigin(0,0).setScale(3);
+      this.background = this.add.tileSprite(0, 0, 300, 256, 'bg').setOrigin(0,0).setScale(3,3.5);
       
       this.button = this.add.image(game.canvas.width/2, game.canvas.height/2, 'button', 1);
       this.button.setInteractive();

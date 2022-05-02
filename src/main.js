@@ -1,7 +1,7 @@
 let config = {
     type: Phaser.CANVAS,
      width: 900,
-    height: 720,
+    height: 900,
   scene: [Menu, Play],
   physics: {
       default: 'matter',
@@ -12,6 +12,8 @@ let config = {
             setBounds: {
                 left: true,
                 right: true,
+                up: false,
+                down: false,
                
           }
       },
