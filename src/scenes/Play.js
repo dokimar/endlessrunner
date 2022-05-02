@@ -27,13 +27,8 @@ class Play extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         this.bruh = new Predator(this,game.canvas.width/2,50,'slug')
         this.bruh.setIgnoreGravity(true);
-<<<<<<< HEAD
 
         this.background = this.add.tileSprite(0, 0, 300, 256, 'bg').setOrigin(0,0).setScale(3,3.6);
-=======
-       // this.bruh.setScale(5,1);
-        this.background = this.add.tileSprite(0, 0, 300, 256, 'bg').setOrigin(0,0).setScale(3);
->>>>>>> 66e355eb5a91384b933feed47d624a33d386c266
         
         // walls that imitate movement with player
         this.WoodL = this.add.tileSprite(0, 0, 250, 1800, 'Left_Wall').setOrigin(0,0);
@@ -51,13 +46,9 @@ class Play extends Phaser.Scene {
         this.leaf = this.matter.add.image(400, 500, 'leaf', null, {isStatic: true});
         //this.plat = this.matter.add.image(400, 500, 'leaf', null, {isStatic: true});
         this.plat.setAngle(20)
-<<<<<<< HEAD
         this.score = this.add.text(game.canvas.width/2, game.canvas.height/4, this.points, null);
         
         this.player.body.sleepThreshold = -1;
-=======
-       
->>>>>>> 66e355eb5a91384b933feed47d624a33d386c266
     }
 
     update(){
@@ -65,7 +56,6 @@ class Play extends Phaser.Scene {
         this.bruh.update();
         this.Warner.update();
         //this.P1.update();
-<<<<<<< HEAD
         //console.log(this.player.body.velocity.y);
         
         this.points += this.player.body.velocity.y/100;
@@ -99,14 +89,6 @@ class Play extends Phaser.Scene {
             this.background.tilePositionY += this.player.body.velocity.y/4;
             this.WoodL.tilePositionY += this.player.body.velocity.y;
             this.WoodR.tilePositionY += this.player.body.velocity.y;
-=======
-       console.log(this.player.body.velocity.y);
-      
-        //console.log(this.speed);
-        if (this.plat.y < -100){
-            this.plat.y = game.canvas.height + Phaser.Math.Between(0,1000);
-            this.plat.setAngle(Phaser.Math.Between(-45,45));
->>>>>>> 66e355eb5a91384b933feed47d624a33d386c266
         }
         else{
             this.leaf.y += 1;
@@ -131,7 +113,6 @@ class Play extends Phaser.Scene {
             this.scene.start('menuScene');
         }
         
-<<<<<<< HEAD
         // console.log(this.player.body.velocity.y)
         
         if(this.player.y >= 400){
@@ -141,28 +122,6 @@ class Play extends Phaser.Scene {
 
         if(this.points>this.score.text){
             this.score.text=Math.round(this.points);
-=======
-
-
-       // console.log(this.player.body.velocity.y)
-        this.background.tilePositionY += this.player.body.velocity.y/4;
-        this.WoodL.tilePositionY += this.player.body.velocity.y;
-        this.WoodR.tilePositionY += this.player.body.velocity.y;
-        if (this.player.body.velocity.y<5 && this.bruh.y<360){
-            this.bruh.y += 2;
-
-
-        }
-        if (this.player.body.velocity.y>10 && this.bruh.y>10){
-            this.bruh.y -=5;
-        }
-        if(this.player.y >= 400){
-            this.player.y = 399;
-        }
-        
-        if(this.player.blocked){
-            console.log("touching");
->>>>>>> 66e355eb5a91384b933feed47d624a33d386c266
         }
         
     }
